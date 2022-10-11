@@ -16,6 +16,9 @@ export const serverSchema = z.object({
     // VERCEL_URL doesnt include `https` so it cant be validated as a URL
     process.env.VERCEL ? z.string() : z.string().url(),
   ),
+  AZURE_AD_CLIENT_ID: z.string().uuid(),
+  AZURE_AD_CLIENT_SECRET: z.string(),
+  AZURE_AD_TENANT_ID: z.string().uuid()
 });
 
 /**
